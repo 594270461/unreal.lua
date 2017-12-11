@@ -138,7 +138,6 @@
 #include "EnvQueryItemType_Actor.lua.h"
 #include "EnvQueryGenerator.lua.h"
 #include "EnvQueryTest.lua.h"
-#include "EnvQueryGenerator_ActorsOfClass.lua.h"
 #include "EnvQueryGenerator_BlueprintBase.lua.h"
 #include "EnvQueryGenerator_Composite.lua.h"
 #include "EnvQueryGenerator_CurrentLocation.lua.h"
@@ -302,7 +301,6 @@ struct lua_static_load_AIModule_uclass_all_struct
 		UTableUtil::loadlib(EnvQueryItemType_Actor_Lib, "UEnvQueryItemType_Actor");
 		UTableUtil::loadlib(EnvQueryGenerator_Lib, "UEnvQueryGenerator");
 		UTableUtil::loadlib(EnvQueryTest_Lib, "UEnvQueryTest");
-		UTableUtil::loadlib(EnvQueryGenerator_ActorsOfClass_Lib, "UEnvQueryGenerator_ActorsOfClass");
 		UTableUtil::loadlib(EnvQueryGenerator_BlueprintBase_Lib, "UEnvQueryGenerator_BlueprintBase");
 		UTableUtil::loadlib(EnvQueryGenerator_Composite_Lib, "UEnvQueryGenerator_Composite");
 		UTableUtil::loadlib(EnvQueryGenerator_CurrentLocation_Lib, "UEnvQueryGenerator_CurrentLocation");

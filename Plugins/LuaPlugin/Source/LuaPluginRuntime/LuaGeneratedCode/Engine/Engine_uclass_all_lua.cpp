@@ -40,7 +40,6 @@
 #include "Commandlet.lua.h"
 #include "Console.lua.h"
 #include "ControlRigInterface.lua.h"
-#include "CrowdManagerBase.lua.h"
 #include "CurveBase.lua.h"
 #include "CurveSourceInterface.lua.h"
 #include "CurveTable.lua.h"
@@ -138,7 +137,6 @@
 #include "PlayerInput.lua.h"
 #include "Polys.lua.h"
 #include "PoseWatch.lua.h"
-#include "PreviewCollectionInterface.lua.h"
 #include "ReverbEffect.lua.h"
 #include "ReverbPluginSourceSettingsBase.lua.h"
 #include "Rig.lua.h"
@@ -383,10 +381,9 @@
 #include "DataTableFunctionLibrary.lua.h"
 #include "DebugDrawService.lua.h"
 #include "GameplayStatics.lua.h"
-#include "ImportanceSamplingLibrary.lua.h"
+#include "HeadMountedDisplayFunctionLibrary.lua.h"
 #include "KismetGuidLibrary.lua.h"
 #include "KismetInputLibrary.lua.h"
-#include "KismetInternationalizationLibrary.lua.h"
 #include "KismetMaterialLibrary.lua.h"
 #include "KismetMathLibrary.lua.h"
 #include "KismetNodeHelperLibrary.lua.h"
@@ -430,13 +427,11 @@
 #include "DistributionFloatConstantCurve.lua.h"
 #include "DistributionFloatUniform.lua.h"
 #include "DistributionFloatUniformCurve.lua.h"
-#include "DistributionFloatParameterBase.lua.h"
 #include "DistributionFloatParticleParameter.lua.h"
 #include "DistributionVectorConstant.lua.h"
 #include "DistributionVectorConstantCurve.lua.h"
 #include "DistributionVectorUniform.lua.h"
 #include "DistributionVectorUniformCurve.lua.h"
-#include "DistributionVectorParameterBase.lua.h"
 #include "DistributionVectorParticleParameter.lua.h"
 #include "ComponentDelegateBinding.lua.h"
 #include "InputDelegateBinding.lua.h"
@@ -516,7 +511,6 @@
 #include "MaterialExpressionGetMaterialAttributes.lua.h"
 #include "MaterialExpressionIf.lua.h"
 #include "MaterialExpressionLinearInterpolate.lua.h"
-#include "MaterialExpressionLogarithm10.lua.h"
 #include "MaterialExpressionLogarithm2.lua.h"
 #include "MaterialExpressionMakeMaterialAttributes.lua.h"
 #include "MaterialExpressionMaterialFunctionCall.lua.h"
@@ -540,13 +534,11 @@
 #include "MaterialExpressionRotateAboutAxis.lua.h"
 #include "MaterialExpressionSetMaterialAttributes.lua.h"
 #include "MaterialExpressionSine.lua.h"
-#include "MaterialExpressionSobol.lua.h"
 #include "MaterialExpressionSpeedTree.lua.h"
 #include "MaterialExpressionSquareRoot.lua.h"
 #include "MaterialExpressionStaticBool.lua.h"
 #include "MaterialExpressionStaticSwitch.lua.h"
 #include "MaterialExpressionSubtract.lua.h"
-#include "MaterialExpressionTemporalSobol.lua.h"
 #include "MaterialExpressionTextureBase.lua.h"
 #include "MaterialExpressionTextureCoordinate.lua.h"
 #include "MaterialExpressionTextureProperty.lua.h"
@@ -747,7 +739,6 @@ struct lua_static_load_Engine_uclass_all_struct
 		UTableUtil::loadlib(Commandlet_Lib, "UCommandlet");
 		UTableUtil::loadlib(Console_Lib, "UConsole");
 		UTableUtil::loadlib(ControlRigInterface_Lib, "IControlRigInterface");
-		UTableUtil::loadlib(CrowdManagerBase_Lib, "UCrowdManagerBase");
 		UTableUtil::loadlib(CurveBase_Lib, "UCurveBase");
 		UTableUtil::loadlib(CurveSourceInterface_Lib, "ICurveSourceInterface");
 		UTableUtil::loadlib(CurveTable_Lib, "UCurveTable");
@@ -845,7 +836,6 @@ struct lua_static_load_Engine_uclass_all_struct
 		UTableUtil::loadlib(PlayerInput_Lib, "UPlayerInput");
 		UTableUtil::loadlib(Polys_Lib, "UPolys");
 		UTableUtil::loadlib(PoseWatch_Lib, "UPoseWatch");
-		UTableUtil::loadlib(PreviewCollectionInterface_Lib, "IPreviewCollectionInterface");
 		UTableUtil::loadlib(ReverbEffect_Lib, "UReverbEffect");
 		UTableUtil::loadlib(ReverbPluginSourceSettingsBase_Lib, "UReverbPluginSourceSettingsBase");
 		UTableUtil::loadlib(Rig_Lib, "URig");
@@ -1090,10 +1080,9 @@ struct lua_static_load_Engine_uclass_all_struct
 		UTableUtil::loadlib(DataTableFunctionLibrary_Lib, "UDataTableFunctionLibrary");
 		UTableUtil::loadlib(DebugDrawService_Lib, "UDebugDrawService");
 		UTableUtil::loadlib(GameplayStatics_Lib, "UGameplayStatics");
-		UTableUtil::loadlib(ImportanceSamplingLibrary_Lib, "UImportanceSamplingLibrary");
+		UTableUtil::loadlib(HeadMountedDisplayFunctionLibrary_Lib, "UHeadMountedDisplayFunctionLibrary");
 		UTableUtil::loadlib(KismetGuidLibrary_Lib, "UKismetGuidLibrary");
 		UTableUtil::loadlib(KismetInputLibrary_Lib, "UKismetInputLibrary");
-		UTableUtil::loadlib(KismetInternationalizationLibrary_Lib, "UKismetInternationalizationLibrary");
 		UTableUtil::loadlib(KismetMaterialLibrary_Lib, "UKismetMaterialLibrary");
 		UTableUtil::loadlib(KismetMathLibrary_Lib, "UKismetMathLibrary");
 		UTableUtil::loadlib(KismetNodeHelperLibrary_Lib, "UKismetNodeHelperLibrary");
@@ -1137,13 +1126,11 @@ struct lua_static_load_Engine_uclass_all_struct
 		UTableUtil::loadlib(DistributionFloatConstantCurve_Lib, "UDistributionFloatConstantCurve");
 		UTableUtil::loadlib(DistributionFloatUniform_Lib, "UDistributionFloatUniform");
 		UTableUtil::loadlib(DistributionFloatUniformCurve_Lib, "UDistributionFloatUniformCurve");
-		UTableUtil::loadlib(DistributionFloatParameterBase_Lib, "UDistributionFloatParameterBase");
 		UTableUtil::loadlib(DistributionFloatParticleParameter_Lib, "UDistributionFloatParticleParameter");
 		UTableUtil::loadlib(DistributionVectorConstant_Lib, "UDistributionVectorConstant");
 		UTableUtil::loadlib(DistributionVectorConstantCurve_Lib, "UDistributionVectorConstantCurve");
 		UTableUtil::loadlib(DistributionVectorUniform_Lib, "UDistributionVectorUniform");
 		UTableUtil::loadlib(DistributionVectorUniformCurve_Lib, "UDistributionVectorUniformCurve");
-		UTableUtil::loadlib(DistributionVectorParameterBase_Lib, "UDistributionVectorParameterBase");
 		UTableUtil::loadlib(DistributionVectorParticleParameter_Lib, "UDistributionVectorParticleParameter");
 		UTableUtil::loadlib(ComponentDelegateBinding_Lib, "UComponentDelegateBinding");
 		UTableUtil::loadlib(InputDelegateBinding_Lib, "UInputDelegateBinding");
@@ -1223,7 +1210,6 @@ struct lua_static_load_Engine_uclass_all_struct
 		UTableUtil::loadlib(MaterialExpressionGetMaterialAttributes_Lib, "UMaterialExpressionGetMaterialAttributes");
 		UTableUtil::loadlib(MaterialExpressionIf_Lib, "UMaterialExpressionIf");
 		UTableUtil::loadlib(MaterialExpressionLinearInterpolate_Lib, "UMaterialExpressionLinearInterpolate");
-		UTableUtil::loadlib(MaterialExpressionLogarithm10_Lib, "UMaterialExpressionLogarithm10");
 		UTableUtil::loadlib(MaterialExpressionLogarithm2_Lib, "UMaterialExpressionLogarithm2");
 		UTableUtil::loadlib(MaterialExpressionMakeMaterialAttributes_Lib, "UMaterialExpressionMakeMaterialAttributes");
 		UTableUtil::loadlib(MaterialExpressionMaterialFunctionCall_Lib, "UMaterialExpressionMaterialFunctionCall");
@@ -1247,13 +1233,11 @@ struct lua_static_load_Engine_uclass_all_struct
 		UTableUtil::loadlib(MaterialExpressionRotateAboutAxis_Lib, "UMaterialExpressionRotateAboutAxis");
 		UTableUtil::loadlib(MaterialExpressionSetMaterialAttributes_Lib, "UMaterialExpressionSetMaterialAttributes");
 		UTableUtil::loadlib(MaterialExpressionSine_Lib, "UMaterialExpressionSine");
-		UTableUtil::loadlib(MaterialExpressionSobol_Lib, "UMaterialExpressionSobol");
 		UTableUtil::loadlib(MaterialExpressionSpeedTree_Lib, "UMaterialExpressionSpeedTree");
 		UTableUtil::loadlib(MaterialExpressionSquareRoot_Lib, "UMaterialExpressionSquareRoot");
 		UTableUtil::loadlib(MaterialExpressionStaticBool_Lib, "UMaterialExpressionStaticBool");
 		UTableUtil::loadlib(MaterialExpressionStaticSwitch_Lib, "UMaterialExpressionStaticSwitch");
 		UTableUtil::loadlib(MaterialExpressionSubtract_Lib, "UMaterialExpressionSubtract");
-		UTableUtil::loadlib(MaterialExpressionTemporalSobol_Lib, "UMaterialExpressionTemporalSobol");
 		UTableUtil::loadlib(MaterialExpressionTextureBase_Lib, "UMaterialExpressionTextureBase");
 		UTableUtil::loadlib(MaterialExpressionTextureCoordinate_Lib, "UMaterialExpressionTextureCoordinate");
 		UTableUtil::loadlib(MaterialExpressionTextureProperty_Lib, "UMaterialExpressionTextureProperty");

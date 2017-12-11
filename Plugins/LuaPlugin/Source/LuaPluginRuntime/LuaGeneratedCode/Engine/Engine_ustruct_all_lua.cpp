@@ -24,6 +24,7 @@
 #include "ComponentReference.lua.h"
 #include "Redirector.lua.h"
 #include "EdGraphPinReference.lua.h"
+#include "OverlapInfo.lua.h"
 #include "StreamableTextureInstance.lua.h"
 #include "DynamicTextureInstance.lua.h"
 #include "LevelSimplificationDetails.lua.h"
@@ -100,8 +101,6 @@
 #include "StringCurveKey.lua.h"
 #include "StringCurve.lua.h"
 #include "TextureLODGroup.lua.h"
-#include "RawDistributionFloat.lua.h"
-#include "RawDistributionVector.lua.h"
 #include "GraphReference.lua.h"
 #include "EdGraphSchemaAction.lua.h"
 #include "EdGraphSchemaAction_NewNode.lua.h"
@@ -169,11 +168,6 @@
 #include "AnimInstanceProxy.lua.h"
 #include "AnimNode_SingleNode.lua.h"
 #include "AnimSingleNodeInstanceProxy.lua.h"
-#include "CachedAnimStateData.lua.h"
-#include "CachedAnimStateArray.lua.h"
-#include "CachedAnimAssetPlayerData.lua.h"
-#include "CachedAnimRelevancyData.lua.h"
-#include "CachedAnimTransitionData.lua.h"
 struct lua_static_load_Engine_ustruct_all_struct
 {
 	static void load()
@@ -203,6 +197,7 @@ struct lua_static_load_Engine_ustruct_all_struct
 		UTableUtil::loadstruct(FComponentReference_Lib, "FComponentReference");
 		UTableUtil::loadstruct(FRedirector_Lib, "FRedirector");
 		UTableUtil::loadstruct(FEdGraphPinReference_Lib, "FEdGraphPinReference");
+		UTableUtil::loadstruct(FOverlapInfo_Lib, "FOverlapInfo");
 		UTableUtil::loadstruct(FStreamableTextureInstance_Lib, "FStreamableTextureInstance");
 		UTableUtil::loadstruct(FDynamicTextureInstance_Lib, "FDynamicTextureInstance");
 		UTableUtil::loadstruct(FLevelSimplificationDetails_Lib, "FLevelSimplificationDetails");
@@ -279,8 +274,6 @@ struct lua_static_load_Engine_ustruct_all_struct
 		UTableUtil::loadstruct(FStringCurveKey_Lib, "FStringCurveKey");
 		UTableUtil::loadstruct(FStringCurve_Lib, "FStringCurve");
 		UTableUtil::loadstruct(FTextureLODGroup_Lib, "FTextureLODGroup");
-		UTableUtil::loadstruct(FRawDistributionFloat_Lib, "FRawDistributionFloat");
-		UTableUtil::loadstruct(FRawDistributionVector_Lib, "FRawDistributionVector");
 		UTableUtil::loadstruct(FGraphReference_Lib, "FGraphReference");
 		UTableUtil::loadstruct(FEdGraphSchemaAction_Lib, "FEdGraphSchemaAction");
 		UTableUtil::loadstruct(FEdGraphSchemaAction_NewNode_Lib, "FEdGraphSchemaAction_NewNode");
@@ -348,11 +341,6 @@ struct lua_static_load_Engine_ustruct_all_struct
 		UTableUtil::loadstruct(FAnimInstanceProxy_Lib, "FAnimInstanceProxy");
 		UTableUtil::loadstruct(FAnimNode_SingleNode_Lib, "FAnimNode_SingleNode");
 		UTableUtil::loadstruct(FAnimSingleNodeInstanceProxy_Lib, "FAnimSingleNodeInstanceProxy");
-		UTableUtil::loadstruct(FCachedAnimStateData_Lib, "FCachedAnimStateData");
-		UTableUtil::loadstruct(FCachedAnimStateArray_Lib, "FCachedAnimStateArray");
-		UTableUtil::loadstruct(FCachedAnimAssetPlayerData_Lib, "FCachedAnimAssetPlayerData");
-		UTableUtil::loadstruct(FCachedAnimRelevancyData_Lib, "FCachedAnimRelevancyData");
-		UTableUtil::loadstruct(FCachedAnimTransitionData_Lib, "FCachedAnimTransitionData");
 	}
 	lua_static_load_Engine_ustruct_all_struct(){UTableUtil::GetInitDelegates().AddStatic(&load);}
 };

@@ -91,7 +91,6 @@ struct lua_static_load_allenum_struct
 		UTableUtil::loadEnum(ESpawnActorCollisionHandlingMethod_Enum, "ESpawnActorCollisionHandlingMethod");
 		UTableUtil::loadEnum(EMeshBufferAccess_Enum, "EMeshBufferAccess");
 		UTableUtil::loadEnum(EEdGraphPinDirection_Enum, "EEdGraphPinDirection");
-		UTableUtil::loadEnum(EPinContainerType_Enum, "EPinContainerType");
 		UTableUtil::loadEnum(ENodeTitleType_Enum, "ENodeTitleType");
 		UTableUtil::loadEnum(ENodeAdvancedPins_Enum, "ENodeAdvancedPins");
 		UTableUtil::loadEnum(ENodeEnabledState_Enum, "ENodeEnabledState");
@@ -105,7 +104,6 @@ struct lua_static_load_allenum_struct
 		UTableUtil::loadEnum(FNavigationSystemRunMode_Enum, "FNavigationSystemRunMode");
 		UTableUtil::loadEnum(ERecastPartitioning_Enum, "ERecastPartitioning");
 		UTableUtil::loadEnum(ENavCostDisplay_Enum, "ENavCostDisplay");
-		UTableUtil::loadEnum(EMaterialProperty_Enum, "EMaterialProperty");
 		UTableUtil::loadEnum(EDOFMode_Enum, "EDOFMode");
 		UTableUtil::loadEnum(EDynamicActorScene_Enum, "EDynamicActorScene");
 		UTableUtil::loadEnum(ECanBeCharacterBase_Enum, "ECanBeCharacterBase");
@@ -152,7 +150,6 @@ struct lua_static_load_allenum_struct
 		UTableUtil::loadEnum(ETransitionLogicType_Enum, "ETransitionLogicType");
 		UTableUtil::loadEnum(EAnimNotifyEventType_Enum, "EAnimNotifyEventType");
 		UTableUtil::loadEnum(EBlendableLocation_Enum, "EBlendableLocation");
-		UTableUtil::loadEnum(EMaterialUsage_Enum, "EMaterialUsage");
 		UTableUtil::loadEnum(EBoneVisibilityStatus_Enum, "EBoneVisibilityStatus");
 		UTableUtil::loadEnum(EPhysBodyOp_Enum, "EPhysBodyOp");
 		UTableUtil::loadEnum(EMeshComponentUpdateFlag_Enum, "EMeshComponentUpdateFlag");
@@ -164,7 +161,6 @@ struct lua_static_load_allenum_struct
 		UTableUtil::loadEnum(EMontagePlayReturnType_Enum, "EMontagePlayReturnType");
 		UTableUtil::loadEnum(EPinHidingMode_Enum, "EPinHidingMode");
 		UTableUtil::loadEnum(EPostCopyOperation_Enum, "EPostCopyOperation");
-		UTableUtil::loadEnum(ECopyType_Enum, "ECopyType");
 		UTableUtil::loadEnum(EEvaluatorDataSource_Enum, "EEvaluatorDataSource");
 		UTableUtil::loadEnum(EEvaluatorMode_Enum, "EEvaluatorMode");
 		UTableUtil::loadEnum(EControlConstraint_Enum, "EControlConstraint");
@@ -186,7 +182,6 @@ struct lua_static_load_allenum_struct
 		UTableUtil::loadEnum(EControllerAnalogStick_Enum, "EControllerAnalogStick");
 		UTableUtil::loadEnum(EPlaneConstraintAxisSetting_Enum, "EPlaneConstraintAxisSetting");
 		UTableUtil::loadEnum(EInterpToBehaviourType_Enum, "EInterpToBehaviourType");
-		UTableUtil::loadEnum(ESceneCapturePrimitiveRenderMode_Enum, "ESceneCapturePrimitiveRenderMode");
 		UTableUtil::loadEnum(ESkyLightSourceType_Enum, "ESkyLightSourceType");
 		UTableUtil::loadEnum(ESplinePointType_Enum, "ESplinePointType");
 		UTableUtil::loadEnum(ESplineCoordinateSpace_Enum, "ESplineCoordinateSpace");
@@ -219,7 +214,6 @@ struct lua_static_load_allenum_struct
 		UTableUtil::loadEnum(ETextureMipCount_Enum, "ETextureMipCount");
 		UTableUtil::loadEnum(ETextureSourceArtType_Enum, "ETextureSourceArtType");
 		UTableUtil::loadEnum(ETextureSourceFormat_Enum, "ETextureSourceFormat");
-		UTableUtil::loadEnum(ETextureRenderTargetFormat_Enum, "ETextureRenderTargetFormat");
 		UTableUtil::loadEnum(EMeshFeatureImportance_Enum, "EMeshFeatureImportance");
 		UTableUtil::loadEnum(ELandscapeCullingPrecision_Enum, "ELandscapeCullingPrecision");
 		UTableUtil::loadEnum(EMeshLODSelectionType_Enum, "EMeshLODSelectionType");
@@ -260,7 +254,6 @@ struct lua_static_load_allenum_struct
 		UTableUtil::loadEnum(EStandbyType_Enum, "EStandbyType");
 		UTableUtil::loadEnum(EWindowMode_Enum, "EWindowMode");
 		UTableUtil::loadEnum(EScreenOrientation_Enum, "EScreenOrientation");
-		UTableUtil::loadEnum(EApplicationState_Enum, "EApplicationState");
 		UTableUtil::loadEnum(EEvaluateCurveTableResult_Enum, "EEvaluateCurveTableResult");
 		UTableUtil::loadEnum(EDrawDebugTrace_Enum, "EDrawDebugTrace");
 		UTableUtil::loadEnum(EMoveComponentAction_Enum, "EMoveComponentAction");
@@ -268,8 +261,9 @@ struct lua_static_load_allenum_struct
 		UTableUtil::loadEnum(EGrammaticalGender_Enum, "EGrammaticalGender");
 		UTableUtil::loadEnum(EGrammaticalNumber_Enum, "EGrammaticalNumber");
 		UTableUtil::loadEnum(ESuggestProjVelocityTraceOption_Enum, "ESuggestProjVelocityTraceOption");
-		UTableUtil::loadEnum(EImportanceWeight_Enum, "EImportanceWeight");
-		UTableUtil::loadEnum(ESlateGesture_Enum, "ESlateGesture");
+		UTableUtil::loadEnum(EOrientPositionSelector_Enum, "EOrientPositionSelector");
+		UTableUtil::loadEnum(EHMDTrackingOrigin_Enum, "EHMDTrackingOrigin");
+		UTableUtil::loadEnum(EHMDWornState_Enum, "EHMDWornState");
 		UTableUtil::loadEnum(EEasingFunc_Enum, "EEasingFunc");
 		UTableUtil::loadEnum(ELerpInterpolationMode_Enum, "ELerpInterpolationMode");
 		UTableUtil::loadEnum(ERoundingMode_Enum, "ERoundingMode");
@@ -389,7 +383,6 @@ struct lua_static_load_allenum_struct
 		UTableUtil::loadEnum(EPawnActionEventType_Enum, "EPawnActionEventType");
 		UTableUtil::loadEnum(EAIRequestPriority_Enum, "EAIRequestPriority");
 		UTableUtil::loadEnum(EAILockSource_Enum, "EAILockSource");
-		UTableUtil::loadEnum(EGenericAICheck_Enum, "EGenericAICheck");
 		UTableUtil::loadEnum(EPawnSubActionTriggeringPolicy_Enum, "EPawnSubActionTriggeringPolicy");
 		UTableUtil::loadEnum(EPawnActionFailHandling_Enum, "EPawnActionFailHandling");
 		UTableUtil::loadEnum(EPathFollowingStatus_Enum, "EPathFollowingStatus");

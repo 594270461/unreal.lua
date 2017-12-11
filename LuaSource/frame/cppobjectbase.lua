@@ -5,7 +5,15 @@ addfunc(CppSingleton, Singleton)
 
 local LevelActors = {}
 local function GcActors()
-	LevelActors = ULuautils.GCThisSet(LevelActors)
+	local arr = {}
+	for actor in pairs(LevelActors) do
+		table.insert(arr, actor)
+	end
+	arr = ULuautils.GCThisSet(arr)
+	LevelActors = {}
+	for _, actor in ipairs(arr) do
+		LevelActors[actor] = true
+	end
 end
 GlobalEvent.On("GC", GcActors)
 

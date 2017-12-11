@@ -93,6 +93,19 @@ TSet<AActor*> ULuautils::GCThisSet(const TSet<AActor*>& ActorsInLua)
 	return LeftActors;
 }
 
+
+TArray<AActor*> ULuautils::GCThisSet(const TArray<AActor*>& ActorsInLua)
+{
+	TArray<AActor*> ResultArr;
+	for (AActor* actor : ActorsInLua)
+	{
+		if (actor->IsPendingKill())
+			continue;
+		ResultArr.Add(actor);
+	}
+	return ResultArr;
+}
+
 void ULuautils::Ctor(const UObject* WorldContextObject, const FString& LuaClassName)
 {
 	UTableUtil::call("Ctor", LuaClassName, WorldContextObject);

@@ -62,11 +62,14 @@ public:
 	UFUNCTION()
 		static UObject* GetPrivateClass(UObject *p);
 
-	UFUNCTION()
+// 	UFUNCTION()
 		static TSet<AActor*> GCThisSet(const TSet<AActor*>& ActorsInLua);
 
-	UFUNCTION(BlueprintCallable, Category = "luautils", meta = (WorldContext = "WorldContextObject"))
+	UFUNCTION()
+		static TArray<AActor*> GCThisSet(const TArray<AActor*>& ActorsInLua);
+
+	UFUNCTION(BlueprintCallable, Category = "luautils")
 		static void Ctor(const UObject* WorldContextObject, const FString& LuaClassName);
-	UFUNCTION(BlueprintCallable, Category = "luautils", meta = (WorldContext = "WorldContextObject"))
+	UFUNCTION(BlueprintCallable, Category = "luautils")
 		static void Call(const UObject* WorldContextObject, const FString& FunctionName);
 };

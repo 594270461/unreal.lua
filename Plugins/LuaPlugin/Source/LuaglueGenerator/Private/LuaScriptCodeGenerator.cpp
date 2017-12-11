@@ -405,8 +405,8 @@ bool FLuaScriptCodeGenerator::CanExportFunction(const FString& ClassNameCPP, UCl
 	if (Class->ClassFlags & CLASS_Interface && Function->GetName() == "ExecuteUbergraph")
 		return false;
 
-	if (Function->HasAnyFunctionFlags(FUNC_EditorOnly))
-		return false;
+// 	if (Function->HasAnyFunctionFlags(FUNC_EditorOnly))
+// 		return false;
 	bool bExport = FScriptCodeGeneratorBase::CanExportFunction(ClassNameCPP, Class, Function);
 	if (bExport)
 	{
